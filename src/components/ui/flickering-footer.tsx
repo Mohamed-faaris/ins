@@ -389,7 +389,7 @@ export const Component = () => {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between p-10">
         <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
           <a href="/" className="flex items-center gap-3">
-            <img src="/insyrium-square.png" alt="Insyrium" className="h-10 w-10" />
+            {/* <img src="/insyrium-square.png" alt="Insyrium" className="h-10 w-10" /> */}
             <img src="/insyrium-full-name.png" alt="Insyrium" className="h-8 hidden sm:block" />
           </a>
           <p className="tracking-tight text-muted-foreground font-medium">
