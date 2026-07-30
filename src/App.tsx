@@ -19,6 +19,7 @@ import {
   MotionNavigationMenuList,
   MotionNavigationMenuTrigger,
 } from '@/components/unlumen-ui/motion-navigation-menu'
+import Features from '@/components/features-3'
 import FlickeringFooterDemo from '@/components/flickering-footer-demo'
 import './App.css'
 
@@ -312,52 +313,7 @@ function App() {
         </div>
       </section>
 
-      <section className="border-t border-border/40 bg-muted/30">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              The Insyrium Platform
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Your Enterprise Digital Twin for Change Intelligence
-            </p>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Insyrium continuously maps your entire enterprise architecture—business processes, applications, data flows, dependencies, risks, and compliance requirements—into a living digital twin that powers confident change decisions.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            <div className="rounded-xl border border-border bg-card p-8 text-left">
-              <Network className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold text-foreground">Continuous Discovery</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Automatically discover and map applications, APIs, data flows, and dependencies across your entire landscape.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-8 text-left">
-              <BarChart3 className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold text-foreground">Impact Analysis</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Model change scenarios across your digital twin to understand blast radius, risk exposure, and assurance gaps.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-8 text-left">
-              <AlertTriangle className="mb-4 h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold text-foreground">Assurance Orchestration</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Automate testing, compliance checks, and approvals based on actual risk profiles and regulatory requirements.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 flex justify-center">
-            <Button size="lg" className="gap-2 px-8 text-base">
-              Explore the Platform
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
+      <Features />
 
       <FlickeringFooterDemo />
     </div>
