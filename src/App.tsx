@@ -1,8 +1,17 @@
 import { cn } from '@/lib/utils'
-import { ArrowRight, BarChart3, Network, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown } from 'lucide-react'
+import { ArrowRight, BarChart3, Network, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown, PieChart, Workflow, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid'
+import {
+  MotionNavigationMenu,
+  MotionNavigationMenuContent,
+  MotionNavigationMenuIndicator,
+  MotionNavigationMenuItem,
+  MotionNavigationMenuLink,
+  MotionNavigationMenuList,
+  MotionNavigationMenuTrigger,
+} from '@/components/unlumen-ui/motion-navigation-menu'
 import FlickeringFooterDemo from '@/components/flickering-footer-demo'
 import './App.css'
 
@@ -28,12 +37,103 @@ function App() {
             </div>
             <span className="text-lg font-semibold tracking-tight text-foreground">Insyrium</span>
           </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-            <a href="#" className="transition-colors hover:text-foreground">Platform</a>
-            <a href="#" className="transition-colors hover:text-foreground">Solutions</a>
-            <a href="#" className="transition-colors hover:text-foreground">Resources</a>
-            <a href="#" className="transition-colors hover:text-foreground">Company</a>
-            <Button variant="outline" size="sm">Contact</Button>
+          <nav className="hidden items-center md:flex">
+            <MotionNavigationMenu
+              viewportClassName=""
+              springStiffness={350}
+              springDamping={32}
+            >
+              <MotionNavigationMenuList highlightClassName="bg-primary/10 rounded-lg">
+                <MotionNavigationMenuItem value="platform">
+                  <MotionNavigationMenuTrigger>Platform</MotionNavigationMenuTrigger>
+                  <MotionNavigationMenuContent highlightClassName="bg-primary/10 rounded-lg ring-1 ring-primary/15">
+                    <div className="grid w-[400px] grid-cols-2 gap-1">
+                      <MotionNavigationMenuLink href="/continuous-discovery">
+                        <PieChart className="mb-1 h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Continuous Discovery</span>
+                        <span className="text-xs text-muted-foreground">
+                          Automatically map your enterprise landscape
+                        </span>
+                      </MotionNavigationMenuLink>
+                      <MotionNavigationMenuLink href="/impact-analysis">
+                        <Workflow className="mb-1 h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Impact Analysis</span>
+                        <span className="text-xs text-muted-foreground">
+                          Model change scenarios & blast radius
+                        </span>
+                      </MotionNavigationMenuLink>
+                      <MotionNavigationMenuLink href="/assurance">
+                        <BarChart3 className="mb-1 h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Assurance Orchestration</span>
+                        <span className="text-xs text-muted-foreground">
+                          Automate testing & compliance checks
+                        </span>
+                      </MotionNavigationMenuLink>
+                      <MotionNavigationMenuLink href="/digital-twin">
+                        <Network className="mb-1 h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Enterprise Digital Twin</span>
+                        <span className="text-xs text-muted-foreground">
+                          Living model of your architecture
+                        </span>
+                      </MotionNavigationMenuLink>
+                    </div>
+                  </MotionNavigationMenuContent>
+                </MotionNavigationMenuItem>
+
+                <MotionNavigationMenuItem value="solutions">
+                  <MotionNavigationMenuTrigger>Solutions</MotionNavigationMenuTrigger>
+                  <MotionNavigationMenuContent highlightClassName="bg-primary/10 rounded-lg ring-1 ring-primary/15">
+                    <div className="grid w-[300px] grid-cols-1 gap-1">
+                      <MotionNavigationMenuLink href="/regulated-industries">
+                        <span className="text-sm font-medium">Regulated Industries</span>
+                        <span className="text-xs text-muted-foreground">
+                          Compliance-first change management
+                        </span>
+                      </MotionNavigationMenuLink>
+                      <MotionNavigationMenuLink href="/enterprise">
+                        <span className="text-sm font-medium">Enterprise</span>
+                        <span className="text-xs text-muted-foreground">
+                          Large-scale change intelligence
+                        </span>
+                      </MotionNavigationMenuLink>
+                    </div>
+                  </MotionNavigationMenuContent>
+                </MotionNavigationMenuItem>
+
+                <MotionNavigationMenuItem value="resources">
+                  <MotionNavigationMenuTrigger>Resources</MotionNavigationMenuTrigger>
+                  <MotionNavigationMenuContent highlightClassName="bg-primary/10 rounded-lg ring-1 ring-primary/15">
+                    <div className="grid w-[300px] grid-cols-1 gap-1">
+                      <MotionNavigationMenuLink href="/docs">
+                        <BookOpen className="mb-1 h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium">Documentation</span>
+                        <span className="text-xs text-muted-foreground">
+                          Guides & API reference
+                        </span>
+                      </MotionNavigationMenuLink>
+                      <MotionNavigationMenuLink href="/blog">
+                        <span className="text-sm font-medium">Blog</span>
+                        <span className="text-xs text-muted-foreground">
+                          Insights on change intelligence
+                        </span>
+                      </MotionNavigationMenuLink>
+                    </div>
+                  </MotionNavigationMenuContent>
+                </MotionNavigationMenuItem>
+
+                <MotionNavigationMenuIndicator />
+
+                <MotionNavigationMenuItem>
+                  <MotionNavigationMenuLink
+                    href="/company"
+                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+                  >
+                    Company
+                  </MotionNavigationMenuLink>
+                </MotionNavigationMenuItem>
+              </MotionNavigationMenuList>
+            </MotionNavigationMenu>
+            <Button variant="outline" size="sm" className="ml-8">Contact</Button>
           </nav>
         </div>
       </header>
