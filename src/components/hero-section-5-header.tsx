@@ -44,7 +44,7 @@ export const HeroHeader = () => {
                                 aria-label="home"
                                 className="flex items-center space-x-2"
                             >
-                                <Logo uniColor />
+                                <img src="insyrium-full-name.png" alt="Insyrium" className="h-8" />
                             </a>
 
                             <button
