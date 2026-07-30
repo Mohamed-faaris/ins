@@ -1,7 +1,5 @@
-import { Button } from '@/components/ui/button'
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 import { HeroHeader } from '@/components/hero-section-5-header'
-import { ChevronRight } from 'lucide-react'
-import LogoCloud from '@/components/hero-section-5-logo-cloud'
 import HeroVideo from '@/components/hero-section-5-video'
 
 export default function HeroSection() {
@@ -17,12 +15,9 @@ export default function HeroSection() {
                                     <h1 className="max-w-md text-balance text-5xl md:text-6xl">Understand Change. Predict Impact. Assure Outcomes.</h1>
 
                                     <div className="flex items-center gap-2">
-                                        <a href="#link">
-                                            <Button className="pr-2.5">
-                                                <span className="text-nowrap">Explore Platform</span>
-                                                <ChevronRight className="ml-1" />
-                                            </Button>
-                                        </a>
+                                        <InteractiveHoverButton>
+                                            Explore Platform
+                                        </InteractiveHoverButton>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +27,6 @@ export default function HeroSection() {
                         </div>
                     </div>
                 </section>
-                <LogoCloud />
             </main>
         </>
     )

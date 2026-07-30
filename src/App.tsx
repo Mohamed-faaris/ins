@@ -1,6 +1,4 @@
-import { ArrowRight, BarChart3, Network, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown, PieChart, Workflow, BookOpen } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
+import { ArrowRight, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown } from 'lucide-react'
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid'
 import {
   ConnectionDots,
@@ -10,16 +8,8 @@ import {
   IncidentList,
   DownwardChart,
 } from '@/components/animated-backgrounds'
-import {
-  MotionNavigationMenu,
-  MotionNavigationMenuContent,
-  MotionNavigationMenuIndicator,
-  MotionNavigationMenuItem,
-  MotionNavigationMenuLink,
-  MotionNavigationMenuList,
-  MotionNavigationMenuTrigger,
-} from '@/components/unlumen-ui/motion-navigation-menu'
 import Features from '@/components/features-3'
+import HeroSection from '@/components/hero-section-5'
 import FlickeringFooterDemo from '@/components/flickering-footer-demo'
 import './App.css'
 
@@ -37,148 +27,7 @@ const consequences = [
 function App() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <div className="flex items-center gap-2 group/logo">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary transition-transform duration-300 group-hover/logo:scale-110">
-              <BarChart3 className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-lg font-semibold tracking-tight text-foreground">Insyrium</span>
-          </div>
-          <nav className="hidden items-center md:flex">
-            <MotionNavigationMenu
-              viewport={false}
-              springStiffness={350}
-              springDamping={32}
-            >
-              <MotionNavigationMenuList highlightClassName="bg-primary/10 rounded-lg">
-                <MotionNavigationMenuItem value="platform">
-                  <MotionNavigationMenuTrigger>Platform</MotionNavigationMenuTrigger>
-                  <MotionNavigationMenuContent highlightClassName="bg-primary/10 rounded-lg ring-1 ring-primary/15">
-                    <div className="grid w-[400px] grid-cols-2 gap-1">
-                      <MotionNavigationMenuLink href="/continuous-discovery">
-                        <PieChart className="mb-1 h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium">Continuous Discovery</span>
-                        <span className="text-xs text-muted-foreground">
-                          Automatically map your enterprise landscape
-                        </span>
-                      </MotionNavigationMenuLink>
-                      <MotionNavigationMenuLink href="/impact-analysis">
-                        <Workflow className="mb-1 h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium">Impact Analysis</span>
-                        <span className="text-xs text-muted-foreground">
-                          Model change scenarios & blast radius
-                        </span>
-                      </MotionNavigationMenuLink>
-                      <MotionNavigationMenuLink href="/assurance">
-                        <BarChart3 className="mb-1 h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium">Assurance Orchestration</span>
-                        <span className="text-xs text-muted-foreground">
-                          Automate testing & compliance checks
-                        </span>
-                      </MotionNavigationMenuLink>
-                      <MotionNavigationMenuLink href="/digital-twin">
-                        <Network className="mb-1 h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium">Enterprise Digital Twin</span>
-                        <span className="text-xs text-muted-foreground">
-                          Living model of your architecture
-                        </span>
-                      </MotionNavigationMenuLink>
-                    </div>
-                  </MotionNavigationMenuContent>
-                </MotionNavigationMenuItem>
-
-                <MotionNavigationMenuItem value="solutions">
-                  <MotionNavigationMenuTrigger>Solutions</MotionNavigationMenuTrigger>
-                  <MotionNavigationMenuContent highlightClassName="bg-primary/10 rounded-lg ring-1 ring-primary/15">
-                    <div className="grid w-[300px] grid-cols-1 gap-1">
-                      <MotionNavigationMenuLink href="/regulated-industries">
-                        <span className="text-sm font-medium">Regulated Industries</span>
-                        <span className="text-xs text-muted-foreground">
-                          Compliance-first change management
-                        </span>
-                      </MotionNavigationMenuLink>
-                      <MotionNavigationMenuLink href="/enterprise">
-                        <span className="text-sm font-medium">Enterprise</span>
-                        <span className="text-xs text-muted-foreground">
-                          Large-scale change intelligence
-                        </span>
-                      </MotionNavigationMenuLink>
-                    </div>
-                  </MotionNavigationMenuContent>
-                </MotionNavigationMenuItem>
-
-                <MotionNavigationMenuItem value="resources">
-                  <MotionNavigationMenuTrigger>Resources</MotionNavigationMenuTrigger>
-                  <MotionNavigationMenuContent highlightClassName="bg-primary/10 rounded-lg ring-1 ring-primary/15">
-                    <div className="grid w-[300px] grid-cols-1 gap-1">
-                      <MotionNavigationMenuLink href="/docs">
-                        <BookOpen className="mb-1 h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium">Documentation</span>
-                        <span className="text-xs text-muted-foreground">
-                          Guides & API reference
-                        </span>
-                      </MotionNavigationMenuLink>
-                      <MotionNavigationMenuLink href="/blog">
-                        <span className="text-sm font-medium">Blog</span>
-                        <span className="text-xs text-muted-foreground">
-                          Insights on change intelligence
-                        </span>
-                      </MotionNavigationMenuLink>
-                    </div>
-                  </MotionNavigationMenuContent>
-                </MotionNavigationMenuItem>
-
-                <MotionNavigationMenuIndicator />
-
-                <MotionNavigationMenuItem>
-                  <MotionNavigationMenuLink
-                    href="/company"
-                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground"
-                  >
-                    Company
-                  </MotionNavigationMenuLink>
-                </MotionNavigationMenuItem>
-              </MotionNavigationMenuList>
-            </MotionNavigationMenu>
-            <Button variant="outline" size="sm" className="ml-8">Contact</Button>
-          </nav>
-        </div>
-      </header>
-
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,oklch(0.2818_0.0831_284.5465/0.08),transparent_60%)]" />
-        <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 md:pb-32 md:pt-24">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-xs font-medium text-muted-foreground">
-              <BarChart3 className="h-3.5 w-3.5" />
-              Enterprise Change Intelligence
-            </div>
-            <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-6xl lg:text-7xl">
-              Understand Change.
-              <br />
-              <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">Predict Impact. Assure Outcomes.</span>
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Enterprise Change Intelligence for Regulated Industries
-            </p>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              Software changes don't fail because of poor execution—they fail because organizations don't fully understand their impact before implementation.
-            </p>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              Insyrium continuously builds an Enterprise Digital Twin that connects business processes, applications, dependencies, risks, and assurance requirements, enabling enterprises to make confident software change decisions before they reach production.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <InteractiveHoverButton className="px-8 text-base">
-                Explore Platform
-              </InteractiveHoverButton>
-              <Button variant="outline" size="lg" className="gap-2 px-8 text-base">
-                Book a Discovery Meeting
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       <section className="border-t border-border/40">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
