@@ -54,38 +54,28 @@ const BentoCard = ({
   >
     <div>{background}</div>
     <div className="p-4">
-      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
-        <Icon className="h-12 w-12 origin-left transform-gpu text-foreground transition-all duration-300 ease-in-out group-hover:scale-75" />
+      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1">
+        <Icon className="h-12 w-12 origin-left transform-gpu text-foreground transition-all duration-300 ease-in-out group-hover:scale-110" />
         <h3 className="text-xl font-semibold text-foreground">
           {name}
         </h3>
         <p className="max-w-lg text-muted-foreground">{description}</p>
       </div>
 
-      <div
-        className={cn(
-          "pointer-events-none flex w-full translate-y-0 transform-gpu flex-row items-center transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:hidden"
-        )}
-      >
-        <a href={href} className="pointer-events-auto inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline">
+      <div className="flex w-full flex-row items-center lg:hidden">
+        <a href={href} className="inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline">
           {cta}
           <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
         </a>
       </div>
     </div>
 
-    <div
-      className={cn(
-        "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex"
-      )}
-    >
-      <a href={href} className="pointer-events-auto inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline">
+    <div className="absolute bottom-0 hidden w-full flex-row items-center p-4 lg:flex">
+      <a href={href} className="inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline">
         {cta}
         <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
       </a>
     </div>
-
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/3 group-hover:dark:bg-neutral-800/10" />
   </div>
 )
 
