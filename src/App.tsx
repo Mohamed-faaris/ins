@@ -39,7 +39,7 @@ function App() {
           </div>
           <nav className="hidden items-center md:flex">
             <MotionNavigationMenu
-              viewportClassName=""
+              viewport={false}
               springStiffness={350}
               springDamping={32}
             >

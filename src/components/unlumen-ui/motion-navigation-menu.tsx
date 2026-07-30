@@ -242,39 +242,27 @@ export function MotionNavigationMenuItem({
     if (content || indicator) setActiveValue("")
   }
 
-  if (viewport && (content || indicator)) {
-    const wrappedChildren = childrenArray.map((child) => {
-      if (
-        React.isValidElement(child) &&
-        child.type === MotionNavigationMenuContent
-      ) {
-        return React.cloneElement(child as React.ReactElement<any>, {
-          _itemValue: itemValue,
-          _viewport: true,
-        })
-      }
-      if (
-        React.isValidElement(child) &&
-        child.type === MotionNavigationMenuIndicator
-      ) {
-        return React.cloneElement(child as React.ReactElement<any>, {
-          _itemValue: itemValue,
-          _viewport: true,
-        })
-      }
-      return child
-    })
-
-    return (
-      <div
-        className={cn("relative", className)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        {wrappedChildren}
-      </div>
-    )
-  }
+  const wrappedChildren = childrenArray.map((child) => {
+    if (
+      React.isValidElement(child) &&
+      child.type === MotionNavigationMenuContent
+    ) {
+      return React.cloneElement(child as React.ReactElement<any>, {
+        _itemValue: itemValue,
+        _viewport: viewport,
+      })
+    }
+    if (
+      React.isValidElement(child) &&
+      child.type === MotionNavigationMenuIndicator
+    ) {
+      return React.cloneElement(child as React.ReactElement<any>, {
+        _itemValue: itemValue,
+        _viewport: viewport,
+      })
+    }
+    return child
+  })
 
   return (
     <div
@@ -282,7 +270,7 @@ export function MotionNavigationMenuItem({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {children}
+      {wrappedChildren}
     </div>
   )
 }
