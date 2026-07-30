@@ -1,5 +1,8 @@
+import { cn } from '@/lib/utils'
 import { ArrowRight, BarChart3, Network, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
+import { BentoCard, BentoGrid } from '@/components/ui/bento-grid'
 import FlickeringFooterDemo from '@/components/flickering-footer-demo'
 import './App.css'
 
@@ -58,10 +61,9 @@ function App() {
               Insyrium continuously builds an Enterprise Digital Twin that connects business processes, applications, dependencies, risks, and assurance requirements, enabling enterprises to make confident software change decisions before they reach production.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" className="gap-2 px-8 text-base">
-                Explore the Platform
-                <ArrowRight className="h-4 w-4" />
-              </Button>
+              <InteractiveHoverButton className="px-8 text-base">
+                Explore Platform
+              </InteractiveHoverButton>
               <Button variant="outline" size="lg" className="gap-2 px-8 text-base">
                 Book a Discovery Meeting
               </Button>
@@ -118,19 +120,33 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {consequences.map((item) => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} className="group rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/30">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
-                </div>
-              )
-            })}
+          <div className="mt-12">
+            <BentoGrid>
+              {consequences.map((item, i) => {
+                const Icon = item.icon
+                return (
+                  <BentoCard
+                    key={item.title}
+                    name={item.title}
+                    description={item.desc}
+                    Icon={Icon}
+                    href="#"
+                    cta="Learn more"
+                    className={cn(
+                      i === 0 && "md:col-span-2",
+                      i === 1 && "md:col-span-1",
+                      i === 2 && "md:col-span-1",
+                      i === 3 && "md:col-span-1",
+                      i === 4 && "md:col-span-2",
+                      i === 5 && "md:col-span-3",
+                    )}
+                    background={
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-50" />
+                    }
+                  />
+                )
+              })}
+            </BentoGrid>
           </div>
         </div>
       </section>
