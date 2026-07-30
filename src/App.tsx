@@ -233,11 +233,11 @@ function App() {
                     href="#"
                     cta="Learn more"
                     className={cn(
-                      i === 0 && "md:col-span-2",
+                      i === 0 && "md:col-span-2 md:row-span-1",
                       i === 1 && "md:col-span-1",
                       i === 2 && "md:col-span-1",
                       i === 3 && "md:col-span-1",
-                      i === 4 && "md:col-span-2",
+                      i === 4 && "md:col-span-1",
                       i === 5 && "md:col-span-3",
                     )}
                     background={
