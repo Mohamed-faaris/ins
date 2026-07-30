@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import { ArrowRight, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown } from 'lucide-react'
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid'
 import {
@@ -45,35 +46,60 @@ function App() {
 
           <div className="mt-16">
             <div className="relative">
-              <div className="flex items-center justify-center gap-0">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-80px' }}
+                variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+                className="flex flex-wrap items-center justify-center gap-3"
+              >
                 {stages.map((stage, i) => (
-                  <div key={stage} className="relative flex flex-col items-center">
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-border bg-card text-center text-xs font-semibold text-foreground shadow-sm md:h-28 md:w-28 md:text-sm">
-                      {stage}
+                  <motion.div
+                    key={stage}
+                    variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex h-14 items-center gap-3 rounded-xl border border-border bg-card px-5 shadow-sm">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                        {i + 1}
+                      </span>
+                      <span className="whitespace-nowrap text-sm font-semibold text-foreground">
+                        {stage}
+                      </span>
                     </div>
                     {i < stages.length - 1 && (
-                      <div className="absolute left-[calc(50%+3rem)] top-1/2 hidden h-0.5 w-[calc(100%-6rem)] bg-border md:block" />
+                      <ArrowRight className="hidden h-5 w-5 text-muted-foreground/30 md:block" />
                     )}
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
-              <div className="mt-4 flex justify-center">
-                <div className="inline-flex items-center gap-3 rounded-full border-2 border-destructive/30 bg-destructive/5 px-8 py-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-destructive/10">
-                    <TrendingDown className="h-4 w-4 text-destructive" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="mt-8 flex justify-center"
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <ArrowRight className="h-6 w-6 rotate-90 text-muted-foreground/30" />
+                  <div className="inline-flex items-center gap-4 rounded-2xl border-2 border-destructive/30 bg-destructive/5 px-10 py-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-destructive/10">
+                      <TrendingDown className="h-5 w-5 text-destructive" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-sm text-destructive/70">Result</p>
+                      <p className="text-lg font-bold text-destructive">Knowledge Lost</p>
+                    </div>
                   </div>
-                  <span className="text-sm font-semibold text-destructive">Knowledge Lost</span>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="mt-3 flex justify-center gap-2">
-                <ArrowRight className="h-5 w-5 text-muted-foreground" />
+              <div className="mt-10 flex items-center gap-4">
+                <div className="h-px flex-1 bg-border/50" />
+                <span className="text-sm font-medium text-muted-foreground">The result?</span>
+                <div className="h-px flex-1 bg-border/50" />
               </div>
-            </div>
-
-            <div className="mt-4 text-center text-sm text-muted-foreground">
-              The result?
             </div>
           </div>
 
