@@ -1,8 +1,15 @@
-import { cn } from '@/lib/utils'
 import { ArrowRight, BarChart3, Network, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown, PieChart, Workflow, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 import { BentoCard, BentoGrid } from '@/components/ui/bento-grid'
+import {
+  ConnectionDots,
+  PulseAlert,
+  LoopingArrows,
+  FailedBars,
+  IncidentList,
+  DownwardChart,
+} from '@/components/animated-backgrounds'
 import {
   MotionNavigationMenu,
   MotionNavigationMenuContent,
@@ -222,30 +229,84 @@ function App() {
 
           <div className="mt-12">
             <BentoGrid>
-              {consequences.map((item, i) => {
-                const Icon = item.icon
-                return (
-                  <BentoCard
-                    key={item.title}
-                    name={item.title}
-                    description={item.desc}
-                    Icon={Icon}
-                    href="#"
-                    cta="Learn more"
-                    className={cn(
-                      i === 0 && "md:col-span-2 md:row-span-1",
-                      i === 1 && "md:col-span-1",
-                      i === 2 && "md:col-span-1",
-                      i === 3 && "md:col-span-1",
-                      i === 4 && "md:col-span-1",
-                      i === 5 && "md:col-span-3",
-                    )}
-                    background={
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-50" />
-                    }
-                  />
-                )
-              })}
+              <BentoCard
+                name={consequences[0].title}
+                description={consequences[0].desc}
+                Icon={consequences[0].icon}
+                href="#"
+                cta="Learn more"
+                className="md:col-span-2 md:row-span-1"
+                background={
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent">
+                    <ConnectionDots />
+                  </div>
+                }
+              />
+              <BentoCard
+                name={consequences[1].title}
+                description={consequences[1].desc}
+                Icon={consequences[1].icon}
+                href="#"
+                cta="Learn more"
+                className="md:col-span-1"
+                background={
+                  <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 via-transparent to-transparent">
+                    <PulseAlert />
+                  </div>
+                }
+              />
+              <BentoCard
+                name={consequences[2].title}
+                description={consequences[2].desc}
+                Icon={consequences[2].icon}
+                href="#"
+                cta="Learn more"
+                className="md:col-span-1"
+                background={
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent">
+                    <LoopingArrows />
+                  </div>
+                }
+              />
+              <BentoCard
+                name={consequences[3].title}
+                description={consequences[3].desc}
+                Icon={consequences[3].icon}
+                href="#"
+                cta="Learn more"
+                className="md:col-span-1"
+                background={
+                  <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 via-transparent to-transparent">
+                    <FailedBars />
+                  </div>
+                }
+              />
+              <BentoCard
+                name={consequences[4].title}
+                description={consequences[4].desc}
+                Icon={consequences[4].icon}
+                href="#"
+                cta="Learn more"
+                className="md:col-span-1"
+                background={
+                  <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 via-transparent to-transparent">
+                    <IncidentList />
+                  </div>
+                }
+              />
+              <BentoCard
+                name={consequences[5].title}
+                description={consequences[5].desc}
+                Icon={consequences[5].icon}
+                href="#"
+                cta="Learn more"
+                className="md:col-span-3"
+                background={
+                  <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 via-primary/5 to-transparent">
+                    <DownwardChart />
+                  </div>
+                }
+              />
             </BentoGrid>
           </div>
         </div>
