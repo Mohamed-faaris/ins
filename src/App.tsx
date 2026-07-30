@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, Network, AlertTriangle, Search, Bug, Rocket, XCircle, TrendingDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import FlickeringFooterDemo from '@/components/flickering-footer-demo'
 import './App.css'
 
 const stages = ['Requirements', 'Development', 'Testing', 'Deployment', 'Production']
@@ -181,23 +182,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="border-t border-border/40">
-        <div className="mx-auto max-w-7xl px-6 py-8">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary">
-                <BarChart3 className="h-3.5 w-3.5 text-primary-foreground" />
-              </div>
-              <span className="font-medium text-foreground">Insyrium</span>
-              <span className="hidden md:inline">—</span>
-              <span className="hidden md:inline">Enterprise Change Intelligence</span>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} Insyrium. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <FlickeringFooterDemo />
     </div>
   )
 }
