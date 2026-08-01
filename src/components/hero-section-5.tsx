@@ -8,12 +8,15 @@ export default function HeroSection() {
             <HeroHeader />
             <main className="overflow-x-hidden">
                 <section>
-                    <div className="lg:min-h-200 sm:aspect-3/2 min-[1996px]:max-h-240 relative mx-auto flex aspect-square flex-col justify-end lg:aspect-auto xl:aspect-video">
+                    <div className="relative mx-auto flex h-svh min-h-[600px] flex-col justify-end">
+                        <div className="pointer-events-none absolute inset-0">
+                            <HeroVideo />
+                        </div>
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                         <div className="relative z-10 flex flex-col justify-end">
                             <div className="mx-auto w-full max-w-7xl px-6 pb-6 lg:pb-12">
                                 <div className="flex flex-wrap items-end justify-between gap-4 lg:w-2/3">
-                                {/* text color: white */}
-                                    <h1 className="max-w-md  text-5xl md:text-6xl !text-white">Understand Change. Predict Impact. Assure Outcomes.</h1>
+                                    <h1 className="max-w-md text-balance text-5xl md:text-6xl !text-white">Understand Change. Predict Impact. Assure Outcomes.</h1>
 
                                     <div className="flex items-center gap-2">
                                         <InteractiveHoverButton>
@@ -22,9 +25,6 @@ export default function HeroSection() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="pointer-events-none absolute inset-0">
-                            <HeroVideo />
                         </div>
                     </div>
                 </section>
