@@ -34,13 +34,13 @@ export default function Features() {
                     </div>
 
                     <div className="row-span-2 grid grid-cols-subgrid gap-4">
-                        <Card className="aspect-9/12 bg-zinc-200! relative overflow-hidden">
+                        <Card className="aspect-9/12 bg-muted! relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <svg viewBox="0 0 200 200" className="h-full w-full opacity-30">
                                     <defs>
                                         <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stopColor="oklch(0.5 0.2 260)" />
-                                            <stop offset="100%" stopColor="oklch(0.5 0.2 160)" />
+                                            <stop offset="0%" stopColor="#26457e" />
+                                            <stop offset="100%" stopColor="#2671b9" />
                                         </linearGradient>
                                     </defs>
                                     <circle cx="100" cy="80" r="40" fill="none" stroke="url(#g1)" strokeWidth="2" opacity="0.4" />

@@ -12,7 +12,8 @@ export default function HeroSection() {
                         <div className="relative z-10 flex flex-col justify-end">
                             <div className="mx-auto w-full max-w-7xl px-6 pb-6 lg:pb-12">
                                 <div className="flex flex-wrap items-end justify-between gap-4 lg:w-2/3">
-                                    <h1 className="max-w-md text-balance text-5xl md:text-6xl">Understand Change. Predict Impact. Assure Outcomes.</h1>
+                                {/* text color: white */}
+                                    <h1 className="max-w-md  text-5xl md:text-6xl !text-white">Understand Change. Predict Impact. Assure Outcomes.</h1>
 
                                     <div className="flex items-center gap-2">
                                         <InteractiveHoverButton>
@@ -22,7 +23,7 @@ export default function HeroSection() {
                                 </div>
                             </div>
                         </div>
-                        <div className="mask-y-from-45% mask-b-to-90% 2xl:mask-x-from-90% pointer-events-none absolute inset-0">
+                        <div className="pointer-events-none absolute inset-0">
                             <HeroVideo />
                         </div>
                     </div>
